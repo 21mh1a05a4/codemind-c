@@ -1,34 +1,35 @@
 #include<stdio.h>
 int main()
 {
-    int n,rem,temp,c=0,c1=0;
+    int n;
     scanf("%d",&n);
-    int arr[n],i;
+    int a[100],i,r,count=0,count2=0,temp;
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-        temp=arr[i];
-        if(arr[i]!=0)
+        temp=a[i];
+        if(a[i]!=0)
         {
-            c=0;
-            while(temp)
+        count=0;
+        while(temp)
+        {
+            r=temp%10;
+            if(r==0)
             {
-                rem=temp%10;
-                if(rem==0)
-                {
-                    c1++;
-                }
-                c++;
-                temp/=10;
+                count2++;
             }
-            printf("%d ",c);
+            count++;
+            temp=temp/10;
+        }
+        printf("%d ",count);
         }
         else
         {
             printf("%d ",1);
         }
-    }
+            
+        }
 }
