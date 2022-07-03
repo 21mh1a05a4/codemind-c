@@ -1,28 +1,29 @@
 #include<stdio.h>
 int main()
 {
-    int n,s1=0,s2=0,sub;
+    int n;
     scanf("%d",&n);
-    int arr[n],i;
+    int a[n],i;
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
-    for(i=0;i<n/2;i++)
+    int sum1=0,sum2=0,diff,mid=n/2;
+    for(i=0;i<mid;i++)
     {
-        s1+=arr[i];
+        sum1+=a[i];
     }
-    for(i=n/2;i<n;i++)
+    for(i=mid;i<n;i++)
     {
-        s2+=arr[i];
+        sum2+=a[i];
     }
-    if(s1>s2)
+    if(sum1>sum2)
     {
-        sub=s1-s2;
+        diff=sum1-sum2;
     }
     else
     {
-        sub=s2-s1;
+        diff=sum2-sum1;
     }
-    printf("%d",sub);
+    printf("%d",diff);
 }
